@@ -13,18 +13,18 @@ namespace :build do
     threads.each { |thread| thread.join } 
   end
 
-  desc "Runs all cukes with @one tag"
+  desc "Run cukes in a chrome browser"
   task :chrome do
       Bundler.with_clean_env do
       console_output = ""
-      IO.popen("thor set:chrome && cucumber -t @company", 'r+') do |pipe|
+      IO.popen("thor set:chrome && cucumber -t @about_us", 'r+') do |pipe|
         puts console_output = pipe.read
         pipe.close_write
       end
     end  
   end
 
-  desc "Runs all cukes with @two tag"
+  desc "Run cukes in a firefox browser"
   task :firefox do
     sleep 1
       Bundler.with_clean_env do
@@ -36,12 +36,12 @@ namespace :build do
     end  
   end
 
-  desc "Runs all cukes with @three tag"
-  task :safari do
+  desc "Run cukes in a headless browser"
+  task :headless do
     sleep 2
       Bundler.with_clean_env do
       console_output = ""
-      IO.popen("thor set:safari && cucumber -t @company", 'r+') do |pipe|
+      IO.popen("thor set:headless && cucumber -t @company", 'r+') do |pipe|
         puts console_output = pipe.read
         pipe.close_write
       end
