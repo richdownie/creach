@@ -1,18 +1,17 @@
 ### Get Started
 
 1. Sign Up at [CukeHub](https://cukehub.com/users/sign_up)
-2. Select ```Automated Tester / Developer``` as the Amigo Role.
-3. Install [Ruby](http://davehaeffner.com/selenium-guidebook/install/ruby/) unless ```ruby -v ``` exists.
-4. Install [Chrome](https://www.google.com/chrome/browser/desktop/index.html) browser.
-5. ```git clone git@github.com:richdownie/creach.git```
-6. ```cd creach```
-7. ```gem install bundler```
-8. ```bundle install```
-9. ```thor list```
-10. ```thor set:headless```
-11. ```cucumber features```
-12. ```rake build:all```
-13. Visit [CukeHub](https://cukehub.com) and view results.
+2. Install [Ruby](http://davehaeffner.com/selenium-guidebook/install/ruby/) unless ```ruby -v ``` exists.
+3. Install [Chrome](https://www.google.com/chrome/browser/desktop/index.html) browser.
+4. ```git clone git@github.com:richdownie/creach.git```
+5. ```cd creach```
+6. ```gem install bundler```
+7. ```bundle install```
+8. ```thor list```
+9. ```thor set:headless```
+10. ```cucumber features```
+11. ```rake build:all```
+12. Visit [CukeHub](https://cukehub.com) and view results.
 
 ### Install Ruby
 * How to Install [Ruby](http://davehaeffner.com/selenium-guidebook/install/ruby/windows/) on Windows 
