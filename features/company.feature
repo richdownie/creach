@@ -7,7 +7,7 @@ Scenario: About Us page
   And I should see "Meet Some of the Members of Our Team" on the page
 
 @careers
-Scenario: Carrers page
+Scenario: Careers page
   Given I am on the Careers page
   Then I should see "JOIN THE CENTRALREACH TEAM" on the page
  
@@ -19,9 +19,16 @@ Scenario: I verify the Senior Automation Test Engineer career opening
   And I should see "Collaborate with QA analysts, product managers, and devs to continuously refine and improve our automation and QA practices." on the page
 
 @contact_us
-Scenario: Send a message
+Scenario: Send an invalid message
   Given I am on the Contact Us page
-  And I send a message
+  And I send an invalid message
+  Then I should see "Whoops! You missed this one!" on the page
+  And I should see "Looks like some fields were left out. Make them feel welcome :-)" on the page
+  
+@contact_us
+Scenario: Send a valid message
+  Given I am on the Contact Us page
+  And I send a valid message
   Then I should see a confirmation on the page
 
 @contact_us

@@ -3,4 +3,5 @@ Before do
   @domain = "https://centralreach.com"
   puts @browser.capabilities.browser_name + " " + @browser.capabilities.version
   @careers = Careers.new(@browser)
+  @contact_us = ContactUs.new(@browser)
 end
