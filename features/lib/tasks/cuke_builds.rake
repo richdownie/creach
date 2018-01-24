@@ -5,7 +5,7 @@ namespace :build do
   desc "Launch all cuke builds"
   task :all do
     threads = []
-    %w{build:chrome build:firefox build:safari}.each do |cuke_tag|
+    %w{build:chrome build:firefox}.each do |cuke_tag|
       threads << Thread.new(cuke_tag) do |thread|
         Rake::Task[thread].execute
       end
@@ -17,7 +17,7 @@ namespace :build do
   task :chrome do
       Bundler.with_clean_env do
       console_output = ""
-      IO.popen("thor set:chrome && cucumber -t @about_us", 'r+') do |pipe|
+      IO.popen("thor set:chrome && cucumber -t '@about_us or @careers'", 'r+') do |pipe|
         puts console_output = pipe.read
         pipe.close_write
       end
@@ -29,7 +29,7 @@ namespace :build do
     sleep 1
       Bundler.with_clean_env do
       console_output = ""
-      IO.popen("thor set:firefox && cucumber -t @careers", 'r+') do |pipe|
+      IO.popen("thor set:firefox && cucumber -t 'not @about_us' -t 'not @careers'", 'r+') do |pipe|
         puts console_output = pipe.read
         pipe.close_write
       end
@@ -41,7 +41,7 @@ namespace :build do
     sleep 2
       Bundler.with_clean_env do
       console_output = ""
-      IO.popen("thor set:headless && cucumber -t @company", 'r+') do |pipe|
+      IO.popen("thor set:headless && cucumber", 'r+') do |pipe|
         puts console_output = pipe.read
         pipe.close_write
       end
